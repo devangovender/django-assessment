@@ -1,0 +1,19 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    <table class="table">
+        <thead>
+            <tr><th scope="col">Super Hero Name</th></tr>
+        </thead>
+        <tbody>
+            {% for object in object_list %}
+                <tr>
+                    <td><a href="{{ object.pk }}/detail/">{{ object.name }}</a></td>
+                </tr>
+            <!-- If object_list is empty  -->
+            {% empty %}
+                <tr><td colspan="4">No objects yet.</td>
+            {% endfor %}
+        </tbody>
+    </table>
+{% endblock %}
